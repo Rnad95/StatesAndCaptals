@@ -199,7 +199,6 @@ public class StatesAndCapitals
 
         Long numberOfDistinctStateBirds = states.stream().
                 map(stateInfo -> stateInfo.getStateBird()).distinct().collect(counting());
-
         testResults.put("A25", StatesAndCapitalsCheck.adv25(numberOfDistinctStateBirds));
         // ***** Advanced 3 (custom comparators) *****
 
