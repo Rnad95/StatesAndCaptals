@@ -128,8 +128,8 @@ public class StatesAndCapitals
         // Use noneMatch()
         // Can use String.split()
 
-//        Boolean doNoStatesHaveAOneWordMotto = states.stream().noneMatch(stateInfo -> stateInfo.getStateMotto());
-        Boolean doNoStatesHaveAOneWordMotto=false;
+        Boolean doNoStatesHaveAOneWordMotto = states.stream().
+                noneMatch(stateInfo -> stateInfo.getStateMotto().split(" ").length ==1);
         testResults.put("I5", StatesAndCapitalsCheck.int5(doNoStatesHaveAOneWordMotto));
 
         // ***** Advanced 1 (aggregation) *****
