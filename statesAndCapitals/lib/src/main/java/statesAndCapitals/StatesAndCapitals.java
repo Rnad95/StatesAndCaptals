@@ -191,13 +191,14 @@ public class StatesAndCapitals
         List<String> allDistinctStateBirdsMinusMockingbirds = states.stream().map(stateInfo -> stateInfo.getStateBird()).distinct().filter(s -> !s.contains("mockingbird")).collect(toList());
         testResults.put("A24", StatesAndCapitalsCheck.adv24(allDistinctStateBirdsMinusMockingbirds));
 
-//**********************************************************************************************************************************
+
 
         // A25. Submit the number of distinct state birds
         // Use collect(counting()), map(), and distinct()
         // PS: Don't use count(). IntelliJ will warn you but I want you to see how counting() works.
 
-        Long numberOfDistinctStateBirds = null;
+        Long numberOfDistinctStateBirds = states.stream().
+                map(stateInfo -> stateInfo.getStateBird()).distinct().collect(counting());
 
         testResults.put("A25", StatesAndCapitalsCheck.adv25(numberOfDistinctStateBirds));
         // ***** Advanced 3 (custom comparators) *****
